@@ -13,8 +13,22 @@ html,body{
 #display-container
 {
     display: grid;
-    grid-template-rows: 0.3fr 0.1fr 0.6fr;
-    gap: 100px;
+    grid-template-rows: 0.3fr 0.1fr 0.1fr 0.6fr;
+    gap: 50px;
+}
+#one-two-player
+{
+    display: flex;
+    margin: 5%;
+    justify-content: center;
+    width: 80%;
+    height: fit-content;
+}
+#one-two-player>button{
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-radius: 12px;
+    margin: 1%;   
 }
 #display
 {
@@ -36,10 +50,10 @@ html,body{
 #reset-btn
 {
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     border-radius: 12px;
 }
-#reset-btn:hover
+#reset-btn:hover,#one-two-player>button:hover
 {
     background-color: rgb(81, 145, 145);
 }
