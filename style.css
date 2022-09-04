@@ -3,3 +3,118 @@ html,body{
     width: 100%;
     background-color: rgb(90, 141, 141);
 }
+#container
+{
+    display: grid;
+    grid-template-columns: repeat(2,0.5fr);
+    width: 100%;
+    height: 100%;
+}
+#display-container
+{
+    display: grid;
+    grid-template-rows: 0.3fr 0.1fr 0.6fr;
+    gap: 100px;
+}
+#display
+{
+    display: flex;
+    background-color: white;
+    border-style: groove;
+    border-color: black;
+    margin: 5%;
+    min-height: 20px;
+}
+#reset
+{
+    display: flex;
+    margin: 5%;
+    justify-content: center;
+    width: 80%;
+    height: fit-content;
+}
+#reset-btn
+{
+    font-weight: bold;
+    font-size: 1.5rem;
+    border-radius: 12px;
+}
+#reset-btn:hover
+{
+    background-color: rgb(81, 145, 145);
+}
+#scores
+{
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr;
+    margin: 5%;
+    gap: 10px;
+}
+#player
+{
+    display: grid;
+    grid-template-columns: 0.7fr 0.3fr;
+    font-size: 1em;
+    color: white;
+    gap: 10px;
+}
+#player>b,#player>div{
+    font-size: 1.5rem;
+}
+#computer
+{
+    display: grid;
+    grid-template-columns: 0.3fr 0.7fr;
+    font-size: 1em;
+    color: white;
+    gap: 10px;
+}
+#computer>b,#computer>div{
+    font-size: 1.5rem;
+}
+
+#board-grid
+{
+    display: grid;
+    grid-template-rows: 0.25fr 0.1fr 0.3fr 0.4fr;
+    padding-left: 50px;
+    height: 100%;
+    padding-right: 25%;
+}
+#button-choice
+{
+    display: grid;
+    grid-template-columns: repeat(2,0.5fr);
+    padding: 20px;
+    gap: 5px;
+}
+#game-buttons
+{
+    display: grid;
+    grid-template-columns: repeat(3,0.33fr);
+    grid-template-rows: repeat(3,0.33fr);
+}
+#board-grid>div:nth-child(1) {
+    display: flex;
+    font-size: 2rem;
+    text-align: center;
+    justify-content: center;
+    padding: 10%;
+    color: white;
+}
+.box
+{
+    border-style: groove;
+}
+#button-choice>button
+{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+#button-choice>button:hover
+{
+    background-color: rgb(81, 145, 145);
+}
+.box:hover{
+    background-color: rgb(81, 145, 145);
+}
