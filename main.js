@@ -21,7 +21,7 @@ const buttons = document.querySelectorAll('.box');
 const player = (buttonSelectionXO,gameGridArray) => {
 
     let playerSelection;
-    previousChoice = "";
+    let previousChoice = "";
 
     buttons.forEach((gridButton) => {
     gridButton.addEventListener('click', () => {
