@@ -1,5 +1,5 @@
 let playButton; // X or O button
-let singleOrMultiplayer;
+//let singleOrMultiplayer;
 let gameArray = ["","","","","","","","",""];
 
 let buttonX = document.getElementById('button-X');
@@ -13,23 +13,35 @@ buttonO.addEventListener('click',() => {
 })
 
 
-twoPlayer.addEventListener('click',() => {
-    singleOrMultiplayer = 2;
-})
+//twoPlayer.addEventListener('click',() => {
+//    singleOrMultiplayer = 2;
+//})
 
 const buttons = document.querySelectorAll('.box');
 const player = (buttonSelectionXO,gameGridArray) => {
 
     let playerSelection;
+    previousChoice = "";
 
     buttons.forEach((gridButton) => {
     gridButton.addEventListener('click', () => {
     playerSelection = gridButton.id;
+    
     console.log(playerSelection)
     if (gameGridArray[parseInt(playerSelection)] === "")
     {
-        gameGridArray[parseInt(playerSelection)] = buttonSelectionXO;
-        gridButton.textContent = buttonSelectionXO;
+        if ((buttonSelectionXO === "X" && previousChoice === "") ||  previousChoice === "X")
+            {
+                gameGridArray[parseInt(playerSelection)] = "X";
+                gridButton.textContent = "X";
+                previousChoice = "O";
+            }
+        else if ((buttonSelectionXO === "O" && previousChoice === "") || previousChoice === "O")
+            {
+                gameGridArray[parseInt(playerSelection)] = "O";
+                gridButton.textContent = "O";
+                previousChoice = "X";
+            }
     }
     
   });
@@ -46,12 +58,20 @@ const player = (buttonSelectionXO,gameGridArray) => {
             grids.textContent = "";
         })
         buttonX.addEventListener('click',() => {
-            playerOne = player("X",gameArray);   
+            gameArray = ["","","","","","","","",""];
+            buttons.forEach((grids) => {
+            grids.textContent = "";
+        })
+            playerOne = player("X",gameArray);  
         })
         buttons.forEach((grids) => {
             grids.textContent = "";
         });
         buttonO.addEventListener('click',() => {
+            gameArray = ["","","","","","","","",""];
+            buttons.forEach((grids) => {
+            grids.textContent = "";
+        })
             playerOne = player("O",gameArray);   
         })
     })
