@@ -13,7 +13,7 @@ html,body{
 #display-container
 {
     display: grid;
-    grid-template-rows: 0.3fr 0.1fr 0.1fr 0.6fr;
+    grid-template-rows: 0.3fr 0.2fr 0.7fr;
     gap: 50px;
 }
 #one-two-player
@@ -38,6 +38,11 @@ html,body{
     border-color: black;
     margin: 5%;
     min-height: 20px;
+    text-align: center;
+    font-size: 2.2rem;
+    justify-content: center;
+    padding: 18px;
+    overflow: auto;
 }
 #reset
 {
@@ -56,35 +61,6 @@ html,body{
 #reset-btn:hover,#one-two-player>button:hover
 {
     background-color: rgb(81, 145, 145);
-}
-#scores
-{
-    display: grid;
-    grid-template-columns: 0.5fr 0.5fr;
-    margin: 5%;
-    gap: 10px;
-}
-#player
-{
-    display: grid;
-    grid-template-columns: 0.7fr 0.3fr;
-    font-size: 1em;
-    color: white;
-    gap: 10px;
-}
-#player>b,#player>div{
-    font-size: 1.5rem;
-}
-#computer
-{
-    display: grid;
-    grid-template-columns: 0.3fr 0.7fr;
-    font-size: 1em;
-    color: white;
-    gap: 10px;
-}
-#computer>b,#computer>div{
-    font-size: 1.5rem;
 }
 
 #board-grid
@@ -119,6 +95,7 @@ html,body{
 .box
 {
     border-style: groove;
+    font-size:  1.8rem;
 }
 #button-choice>button
 {
