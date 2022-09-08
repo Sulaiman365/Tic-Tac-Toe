@@ -168,9 +168,9 @@ const playWithComputer = (buttonSelectionXO1,gameGridArray1) => {
                 gameGridArray1[parseInt(playerSelection1)] = "X";
                 gridButton.textContent = "X";
                 computerSelection = Math.floor(Math.random() * 9);
-                // do {
-                //     computerSelection = Math.floor(Math.random() * 9);
-                // } while (gameGridArray[computerSelection] !== "");
+                 do {
+                     computerSelection = Math.floor(Math.random() * 9);
+                 } while (gameGridArray1[computerSelection] !== "");
                 gameGridArray1[computerSelection] = "O";
                 document.getElementById(`${computerSelection.toString()}`).textContent = "O";
                 previousChoice1 = "X";
@@ -181,9 +181,9 @@ const playWithComputer = (buttonSelectionXO1,gameGridArray1) => {
                 gameGridArray1[parseInt(playerSelection1)] = "O";
                 gridButton.textContent = "O";
                 computerSelection = Math.floor(Math.random() * 9);
-                // do {
-                //     computerSelection = Math.floor(Math.random() * 9);
-                // } while (gameGridArray[computerSelection] !== "");
+                 do {
+                     computerSelection = Math.floor(Math.random() * 9);
+                 } while (gameGridArray1[computerSelection] !== "");
                 gameGridArray1[computerSelection] = "X";
                 document.getElementById(`${computerSelection.toString()}`).textContent = "X";
                 previousChoice1 = "O";
