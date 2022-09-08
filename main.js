@@ -1,6 +1,7 @@
-let playButton; // X or O button
+//let playButton; // X or O button
 //let singleOrMultiplayer;
 let gameArray = ["","","","","","","","",""];
+let gameArray1 = ["","","","","","","","",""];
 
 let buttonX = document.getElementById('button-X');
 let buttonO = document.getElementById('button-O');
@@ -8,9 +9,9 @@ let display = document.getElementById('display');
 let singlePlayer = document.getElementById('single-player');
 let twoPlayer = document.getElementById('two-player');
 
-buttonO.addEventListener('click',() => {
-    playButton = "O";   
-})
+// buttonO.addEventListener('click',() => {
+//     playButton = "O";   
+// })
 
 const buttons = document.querySelectorAll('.box');
 const player = (buttonSelectionXO,gameGridArray) => {
@@ -21,8 +22,7 @@ const player = (buttonSelectionXO,gameGridArray) => {
     buttons.forEach((gridButton) => {
     gridButton.addEventListener('click', () => {
     playerSelection = gridButton.id;
-    
-    console.log(playerSelection)
+    display.textContent = "Play in progress";
     if (gameGridArray[parseInt(playerSelection)] === "")
     {
         display.textContent = "Play in progress";
@@ -148,44 +148,224 @@ const player = (buttonSelectionXO,gameGridArray) => {
 })
   return {gameGridArray,buttonSelectionXO}
 }
+const playWithComputer = (buttonSelectionXO1,gameGridArray1) => {
+
+    let playerSelection1;
+    let previousChoice1 = "";
+    let computerSelection;
+
+    buttons.forEach((gridButton) => {
+    gridButton.addEventListener('click', () => {
+    playerSelection1 = gridButton.id;
+    display.textContent = "Play in progress";
+    
+    //console.log(playerSelection)
+    if (gameGridArray1[parseInt(playerSelection1)] === "")
+    {
+        display.textContent = "Play in progress";
+        if ((buttonSelectionXO1 === "X" && previousChoice1 === "") || previousChoice1 === "X" )
+            {
+                gameGridArray1[parseInt(playerSelection1)] = "X";
+                gridButton.textContent = "X";
+                computerSelection = Math.floor(Math.random() * 9);
+                // do {
+                //     computerSelection = Math.floor(Math.random() * 9);
+                // } while (gameGridArray[computerSelection] !== "");
+                gameGridArray1[computerSelection] = "O";
+                document.getElementById(`${computerSelection.toString()}`).textContent = "O";
+                previousChoice1 = "X";
+                //computer
+            }
+        else if ((buttonSelectionXO1 === "O" && previousChoice1 === "") || previousChoice1 === "O" )
+            {
+                gameGridArray1[parseInt(playerSelection1)] = "O";
+                gridButton.textContent = "O";
+                computerSelection = Math.floor(Math.random() * 9);
+                // do {
+                //     computerSelection = Math.floor(Math.random() * 9);
+                // } while (gameGridArray[computerSelection] !== "");
+                gameGridArray1[computerSelection] = "X";
+                document.getElementById(`${computerSelection.toString()}`).textContent = "X";
+                previousChoice1 = "O";
+                //computer
+            }
+    }
+    if (gameGridArray1[0] === "X" && gameGridArray1[1] === "X" && gameGridArray1[2]  === "X")
+    {
+        buttonSelectionXO1 = "";
+        previousChoice1 = "";
+        display.textContent = "Player X Wins!";
+    }
+    else if(gameGridArray1[0] === "O" && gameGridArray1[1] === "O" && gameGridArray1[2]  === "O")
+    {
+        buttonSelectionXO1 = "";
+        previousChoice1 = "";
+        display.textContent = "Player O Wins!";
+    }
+    else if(gameGridArray1[3] === "O" && gameGridArray1[4] === "O" && gameGridArray1[5]  === "O")
+    {
+        buttonSelectionXO1 = "";
+        previousChoice1 = "";
+        display.textContent = "Player O Wins!";
+    }
+    else if(gameGridArray1[3] === "X" && gameGridArray1[4] === "X" && gameGridArray1[5]  === "X")
+    {
+        buttonSelectionXO1 = "";
+        previousChoice1 = "";
+        display.textContent = "Player X Wins!";
+    }
+    else if(gameGridArray1[6] === "O" && gameGridArray1[7] === "O" && gameGridArray1[8]  === "O")
+    {
+        buttonSelectionXO1 = "";
+        previousChoice1 = "";
+        display.textContent = "Player O Wins!";
+    }
+    else if(gameGridArray1[6] === "X" && gameGridArray1[7] === "X" && gameGridArray1[8]  === "X")
+    {
+        buttonSelectionXO1 = "";
+        previousChoice1 = "";
+        display.textContent = "Player X Wins!";
+    }
+    else if(gameGridArray1[0] === "O" && gameGridArray1[3] === "O" && gameGridArray1[6]  === "O")
+    {
+        buttonSelectionXO1 = "";
+        previousChoice1 = "";
+        display.textContent = "Player O Wins!";
+    }
+    else if(gameGridArray1[0] === "X" && gameGridArray1[3] === "X" && gameGridArray1[6]  === "X")
+    {
+        buttonSelectionXO1 = "";
+        previousChoice1 = "";
+        display.textContent = "Player X Wins!";
+    }
+    else if(gameGridArray1[1] === "O" && gameGridArray1[4] === "O" && gameGridArray1[7]  === "O")
+    {
+        buttonSelectionXO1 = "";
+        previousChoice1 = "";
+        display.textContent = "Player O Wins!";
+    }
+    else if(gameGridArray1[1] === "X" && gameGridArray1[4] === "X" && gameGridArray1[7]  === "X")
+    {
+        buttonSelectionXO1 = "";
+        previousChoice1 = "";
+        display.textContent = "Player X Wins!";
+    }
+    else if(gameGridArray1[2] === "O" && gameGridArray1[5] === "O" && gameGridArray1[8]  === "O")
+    {
+        buttonSelectionXO1 = "";
+        previousChoice1 = "";
+        display.textContent = "Player O Wins!";
+    }
+    else if(gameGridArray1[2] === "X" && gameGridArray1[5] === "X" && gameGridArray1[8]  === "X")
+    {
+        buttonSelectionXO1 = "";
+        previousChoice1 = "";
+        display.textContent = "Player X Wins!";
+    }
+    else if(gameGridArray1[0] === "O" && gameGridArray1[4] === "O" && gameGridArray1[8]  === "O")
+    {
+        buttonSelectionXO1 = "";
+        previousChoice1 = "";
+        display.textContent = "Player O Wins!";
+    }
+    else if(gameGridArray1[0] === "X" && gameGridArray1[4] === "X" && gameGridArray1[8]  === "X")
+    {
+        buttonSelectionXO1 = "";
+        previousChoice1 = "";
+        display.textContent = "Player X Wins!";
+    }
+    else if(gameGridArray1[2] === "O" && gameGridArray1[4] === "O" && gameGridArray1[6]  === "O")
+    {
+        buttonSelectionXO1 = "";
+        previousChoice1 = "";
+        display.textContent = "Player O Wins!";
+    }
+    else if(gameGridArray1[2] === "X" && gameGridArray1[4] === "X" && gameGridArray1[6]  === "X")
+    {
+        buttonSelectionXO1 = "";
+        previousChoice1 = "";
+        display.textContent = "Player X Wins!";
+    }
+    else if (gameGridArray1[0] !== "" && gameGridArray1[1] !== "" && gameGridArray1[2] !== "" && gameGridArray1[3] !== "" 
+    && gameGridArray1[4] !== "" && gameGridArray1[5] !== "" && gameGridArray1[6] !== "" && gameGridArray1[7] !== "" && gameGridArray1[8] !== "" 
+    && display.textContent !== "Player O Wins!" && display.textContent !== "Player X Wins!")
+    {
+        buttonSelectionXO1 = "";
+        previousChoice1 = "";
+        display.textContent = "Draw!";
+    }
+    
+  });
+})
+  return {gameGridArray1,buttonSelectionXO1}
+}
 
  const gameBoard = () =>
  {
-    let playerOne;
-    twoPlayer.addEventListener('click',() => {
-        gameArray = ["","","","","","","","",""];
-        display.textContent = "Begin!";
+    let secondPlayer;
+    let playerOneX;
+    let playerOneO
+    let withComputerO;
+    let withComputerX
+    singlePlayer.addEventListener('click', () => {
+        secondPlayer = 'computer';
+        gameArray1 = ["","","","","","","","",""];
+        display.textContent = "Begin! Single Player.";
         buttons.forEach((grids) => {
             grids.textContent = "";
-        })
-        buttonX.addEventListener('click',() => {
-            gameArray = ["","","","","","","","",""];
-            display.textContent = "Player 1 is X, Player 2 is O.";
-            buttons.forEach((grids) => {
-            grids.textContent = "";
-        })
-            playerOne = player("X",gameArray);  
-        })
-        buttons.forEach((grids) => {
-            grids.textContent = "";
-        });
-        buttonO.addEventListener('click',() => {
-            gameArray = ["","","","","","","","",""];
-            display.textContent = "Player 1 is O, Player 2 is X.";
-            buttons.forEach((grids) => {
-            grids.textContent = "";
-        })
-            playerOne = player("O",gameArray);   
         })
     })
-    return Object.assign({},playerOne)
-}
+    twoPlayer.addEventListener('click', () => {
+        secondPlayer = 'human';
+        gameArray1 = ["","","","","","","","",""];
+        display.textContent = "Begin! Multi-Player.";
+        buttons.forEach((grids) => {
+            grids.textContent = "";
+        })
+    })
+
+    buttonX.addEventListener('click',() => {
+        gameArray1 = ["","","","","","","","",""];
+        gameArray = ["","","","","","","","",""];
+        display.textContent = "Player 1 is X, Player 2 is O.";
+        buttons.forEach((grids) => {
+        grids.textContent = "";
+    })
+        if (secondPlayer === 'computer')
+        {
+            withComputerX = playWithComputer("X",gameArray1);
+        }
+        else if (secondPlayer === 'human')
+        {
+            playerOneX = player("X",gameArray);
+        }
+    })
+    buttonO.addEventListener('click',() => {
+        gameArray1 = ["","","","","","","","",""];
+        gameArray = ["","","","","","","","",""];
+        display.textContent = "Player 1 is O, Player 2 is X.";
+        buttons.forEach((grids) => {
+        grids.textContent = "";
+    })
+        if (secondPlayer === 'computer')
+        {
+            withComputerO = playWithComputer("O",gameArray1);
+        }
+        else if (secondPlayer === 'human')
+        {
+            playerOneO = player("O",gameArray);
+        }
+    })
 const reset = document.getElementById('reset-btn');
 reset.addEventListener('click',() => {
     display.textContent = "RESET";
     gameArray = ["","","","","","","","",""];
+    gameArray1 = ["","","","","","","","",""];
     buttons.forEach((grids) => {
         grids.textContent = "";
     });
-})
+})    
+return Object.assign({},secondPlayer,gameArray,gameArray1,playerOneO,playerOneX,withComputerO,withComputerX)
+}
+
  const game = gameBoard();
